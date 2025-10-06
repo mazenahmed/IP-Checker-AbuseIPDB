@@ -17,7 +17,7 @@ API="YOUAPIKEYHERE"
 url = 'https://api.abuseipdb.com/api/v2/check'
 output=open("results.csv","w",newline='')
 
-with open('ips.csv', mode='r') as ips:
+with open('ips.csv', encoding="utf-8-sig", mode='r') as ips:
     filewriter = csv.writer(output,delimiter=',',quotechar='|')
     filewriter.writerow(['IPAddress','isPublic','abuseConfidenceScore','countryCode','ISP','usageType','totalReports','numDistinctUsers'])
     ips = csv.reader(ips,delimiter=',')
